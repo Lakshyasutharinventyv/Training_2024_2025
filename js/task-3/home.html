@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Logges Out In: <span id="timer"></span></h1>
+    <button onclick="logoutUser()">Logout</button>
+</body>
+<script>
+  
+
+    const timerElement = document.getElementById("timer");
+    
+    let counter = JSON.parse(sessionStorage.getItem('session')).expiresIn / 1000; 
+    
+    const interval = setInterval(() => {
+      timerElement.innerText = counter;
+      counter -= 1;
+  
+      if (counter < 0) {
+        clearInterval(interval); 
+      }
+    }, 1000); 
+
+</script>
+<script src="./index.js"></script>
+</html>

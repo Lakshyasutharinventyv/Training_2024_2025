@@ -1,0 +1,258 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    background-color: black;
+}
+
+
+.left {
+    height: 100vh;
+    flex: 7;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftInner {
+    width: 50%;
+    margin-bottom: 150px;
+}
+
+.right {
+    height: 100vh;
+    flex: 3;
+    background: linear-gradient(to left, #71B280, #134E5E);
+    position: relative;
+}
+
+.rightInner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 400px;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+
+.logo > img {
+    object-fit: contain;
+    width: 100px;
+    height: 100px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+
+.tabs {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Form Container Styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.form input {
+    height: 50px;
+    margin-bottom: 15px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 0 15px;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.form input::placeholder {
+    color: #ddd;
+}
+
+.form input:focus {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+.loginCta, .registerCta {
+    height: 40px;
+    width: 150px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    background-color: #71B280;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.loginCta:hover, .registerCta:hover {
+    background-color: #5f9f6b;
+}
+#loginFormContainer,#registerFormContainer{
+    position: absolute;
+    width: 100%;
+}
+
+
+#loginTabDiv{
+    left: 0;
+}
+#registerTabDiv{
+    right:0;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  details {
+    display: inline-block;
+    width: 48%;
+  }
+
+  summary {
+    background-color: #f1f1f1;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+  }
+
+  summary:hover {
+    background-color: #ddd;
+  }
+
+  details[open] summary {
+    background-color: #ddd;
+    border-bottom: 1px solid #fff;
+  }
+
+  /* Only allow one tab to be open at a time */
+  /* #login-details[open] ~ #register-details{
+    pointer-events: none;
+    opacity: 0.5;
+  } */
+  #login-details[open]{
+      width: 30vw;
+      position: absolute;
+      right: 0;
+  }
+
+  #register-details[open]{
+      width: 30vw;
+      position: absolute;
+      left: 0;
+  }
+
+  .tab-content {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    display: none;
+  }
+
+  details[open] .tab-content {
+    display: block;
+  }
+
+  input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+#login-details,#register-details{
+  width: 100%;
+}
+details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
