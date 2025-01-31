@@ -175,4 +175,4 @@ npm test
 ✔ **Automated UI Testing** with Playwright  
 ✔ **Reports** in JSON & HTML format  
 
-Would you like any modifications? 😊
+Would you like any modifications?😊
