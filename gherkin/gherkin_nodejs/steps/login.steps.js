@@ -10,6 +10,7 @@ Given('the user is on the login page', async function () {
 });
 
 When('the user enters a valid username and password', async function () {
+  
   await page.fill('#username', 'test');
   await page.fill('#password', 'password');
 });
