@@ -15,11 +15,11 @@
             "line": 4,
             "name": "I am on the university results page",
             "match": {
-              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\steps\\result.steps.js:11"
+              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\test\\steps\\result.steps.js:14"
             },
             "result": {
               "status": "passed",
-              "duration": 1004086000
+              "duration": 1098548799
             }
           },
           {
@@ -28,11 +28,11 @@
             "line": 5,
             "name": "I select \"DEPSTAR\" from the \"Institution\" dropdown",
             "match": {
-              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\steps\\result.steps.js:17"
+              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\test\\steps\\result.steps.js:20"
             },
             "result": {
               "status": "passed",
-              "duration": 52540500
+              "duration": 60468499
             }
           },
           {
@@ -41,11 +41,11 @@
             "line": 6,
             "name": "I select \"BTECH(CS)\" from the \"Degree\" dropdown",
             "match": {
-              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\steps\\result.steps.js:21"
+              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\test\\steps\\result.steps.js:24"
             },
             "result": {
               "status": "passed",
-              "duration": 91757999
+              "duration": 108278100
             }
           },
           {
@@ -54,11 +54,11 @@
             "line": 7,
             "name": "I select \"7\" from the \"Semester\" dropdown",
             "match": {
-              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\steps\\result.steps.js:25"
+              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\test\\steps\\result.steps.js:28"
             },
             "result": {
               "status": "passed",
-              "duration": 120373900
+              "duration": 115587100
             }
           },
           {
@@ -67,11 +67,11 @@
             "line": 8,
             "name": "I select \"NOVEMBER 2024\" from the \"Exam\" dropdown",
             "match": {
-              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\steps\\result.steps.js:29"
+              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\test\\steps\\result.steps.js:32"
             },
             "result": {
               "status": "passed",
-              "duration": 125529499
+              "duration": 112380900
             }
           },
           {
@@ -80,11 +80,11 @@
             "line": 9,
             "name": "I enter \"21dcs121\" in the \"Student ID\" field",
             "match": {
-              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\steps\\result.steps.js:33"
+              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\test\\steps\\result.steps.js:36"
             },
             "result": {
               "status": "passed",
-              "duration": 189040700
+              "duration": 94483900
             }
           },
           {
@@ -93,11 +93,11 @@
             "line": 10,
             "name": "I click the \"Show Marksheet\" button",
             "match": {
-              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\steps\\result.steps.js:37"
+              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\test\\steps\\result.steps.js:40"
             },
             "result": {
               "status": "passed",
-              "duration": 6507780299
+              "duration": 6019220900
             }
           },
           {
@@ -106,20 +106,19 @@
             "line": 11,
             "name": "I should see \"SUTHAR LAKSHYA AMRUTBHAI\" on the page",
             "match": {
-              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\steps\\result.steps.js:41"
+              "location": "file:\\D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\test\\steps\\result.steps.js:44"
             },
             "result": {
               "status": "passed",
-              "duration": 14945600
+              "duration": 25571699
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "failed",
-              "duration": 25000128100,
-              "error_message": "Error: function timed out, ensure the promise resolves within 25000 milliseconds\n    at Timeout.<anonymous> (D:\\internship_training\\Training_2024_2025\\gherkin\\cucumber_playwright\\node_modules\\@cucumber\\cucumber\\lib\\time.js:54:20)\n    at listOnTimeout (node:internal/timers:594:17)\n    at process.processTimers (node:internal/timers:529:7)"
+              "status": "passed",
+              "duration": 252982800
             }
           }
         ],
@@ -132,6 +131,6 @@
     "keyword": "Feature",
     "name": "University Results Page",
     "tags": [],
-    "uri": "features\\result.feature"
+    "uri": "test\\features\\result.feature"
   }
 ]
