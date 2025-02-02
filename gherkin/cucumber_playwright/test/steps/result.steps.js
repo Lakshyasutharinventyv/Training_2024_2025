@@ -1,10 +1,7 @@
-import fs from 'fs/promises';
 import { expect } from '@playwright/test';
 import { chromium } from 'playwright';
 import { setDefaultTimeout, Given, When, Then, After } from '@cucumber/cucumber';
-import TestResult from "../../database/models/result.model.js";
-import {connectDB} from "../../database/connection.js";
-import mongoose from 'mongoose';
+
 
 
 setDefaultTimeout(100000);
@@ -47,7 +44,6 @@ Then('I should see {string} on the page', async function (expectedText) {
 });
 
 After(async function () {
-   
     await browser.close(); 
 });
 
