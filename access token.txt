@@ -1,0 +1,3 @@
+use couch base and tikv as db and record testing screen and record video and store it in min.io
+
+pass json from api and print that data and do deserialize in middleware

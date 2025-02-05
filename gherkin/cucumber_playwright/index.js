@@ -1,46 +1,38 @@
 import express from "express";
-import path from "path";
 import { fileURLToPath } from "url";
-import dotenv from "dotenv";
-import { connectDB } from "./database/connection.js";
-import fs from "fs/promises";
-import mongoose from "mongoose";
-import resultModel from "./database/models/result.model.js";
+import path from "path";
 
-dotenv.config();
+
+
+import {connectToTiDB,saveJsonToTiDB} from "./tidb.js"
+import {connectToCouchBase,saveJsonToCouchbase} from "./couchbase.js";
+import {connectToMongoDB,saveJsonToMongoDB} from "./mongodb.js"
+
+
 const app = express();
-
-connectDB();
-
 const port = 3000;
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-async function saveJsonToDB() {
-    try {
-        const filePath = "D:/internship_training/Training_2024_2025/gherkin/cucumber_playwright/test-result/cucumber-report.json";
+(async () => {
+    // await connectToCouchBase();
+    await connectToTiDB();
+    // await connectToMongoDB();
 
-        const data = await fs.readFile(filePath, "utf8");
-        const jsonData = JSON.parse(data);
+    app.listen(port, () => {
+        console.log(`Server running on http://localhost:${port}`);
+    });
+})();
 
-        console.log("Parsed JSON:", jsonData);
-        let totalReports = await resultModel.countDocuments();
-        
-        await resultModel.create({ reportName:`Report ${totalReports+1}`, data: JSON.stringify(jsonData) });
-
-        console.log("Test results saved to MongoDB successfully.");
-        await mongoose.connection.close();
-        return jsonData
-    } catch (error) {
-        console.error("Error saving data to the database:", error);
-    }
-}
 
 app.get("/", async (req, res) => {
-    let data = await saveJsonToDB();
-    res.sendFile(path.join(__dirname, "test-result", "cucumber-report.html"));
-});
-
-app.listen(port, () => {
-    console.log(`App is running on port ${port}`);
+    try {
+        // await saveJsonToCouchbase();
+        await saveJsonToTiDB();
+        // await saveJsonToMongoDB();
+        res.sendFile(path.join(__dirname, "test-result", "cucumber-report.html"));
+    } catch (error) {
+        res.status(500).send("Failed to save data or send report");
+    }
 });

@@ -1,0 +1,47 @@
+[
+  {
+    "s_id": 1,
+    "name": "Aarav Patel",
+    "phone": "+91 9876543210",
+    "email": "aarav.patel@example.com",
+    "city": "Mumbai",
+    "address": "123, ABC Street, XYZ Colony",
+    "marks": [85, 92, 78, 90, 88]
+  },
+  {
+    "s_id": 2,
+    "name": "Sanya Sharma",
+    "phone": "+91 8765432109",
+    "email": "sanya.sharma@example.com",
+    "city": "Delhi",
+    "address": "456, PQR Street, LMN Colony",
+    "marks": [75, 80, 88, 79, 95]
+  },
+   {
+    "s_id": 3,
+    "name": "Arjun Gupta",
+    "phone": "+91 7456123980",
+    "email": "arjun.gupta@example.com",
+    "city": "Bangalore",
+    "address": "789, DEF Street, GHI Colony",
+    "marks": [92, 89, 94, 87, 80]
+  },
+   {
+    "s_id": 4,
+    "name": "Neha Verma",
+    "phone": "+91 9123456780",
+    "email": "neha.verma@example.com",
+    "city": "Kolkata",
+    "address": "1011, JKL Street, MNO Colony",
+    "marks": [78, 85, 90, 92, 88]
+  },
+  {
+    "s_id": 5,
+    "name": "Rahul Kumar",
+    "phone": "+91 8309765412",
+    "email": "rahul.kumar@example.com",
+    "city": "Chennai",
+    "address": "1213, PQR Street, STU Colony",
+    "marks": [85, 88, 76, 91, 94]
+  }
+]
