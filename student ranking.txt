@@ -1,0 +1,6 @@
+make 4 threads, first thread should take inputs of student marks, second thread should calculate percentage, third thread should calculate ranking based on percentage and fourth thread should make json file having details of students and name of file should based on ranking. All the steps should print all the work done in that thread. Do not use unwrap and clone.  
+
+lazy static and static variables
+
+request sorting
+6 thread, 5 thread should process one type of req(post,put,get,del,patch). if a req is of post method then request that is processing post method should process that request and 6th thread should manage req sorting. 100,000,000 request should be passed and thread should print request. All this task should be done concurrently.
