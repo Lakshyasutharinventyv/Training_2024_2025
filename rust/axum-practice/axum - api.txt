@@ -1,0 +1,18 @@
+axum - api
+3 endpoints get post delete
+get - retrive messages from tikv
+post - store struct in tikv
+delete - delete struct form tikv
+
+make 1 user
+use message instead of csrf 
+middleware 1 add id to header of request in post
+           2 store logs in file - method of http method and request url
+	       3 auth middleware - check api key - if not key present reject request
+	         generate random id on login
+
+store struct animals in tikv and whenever get and delete request is made then if user is authenticated if valid then that requests should be performed.
+
+
+		
+register - gen message - login verify message in middleware
