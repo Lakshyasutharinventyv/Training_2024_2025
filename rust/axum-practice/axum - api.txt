@@ -16,3 +16,8 @@ store struct animals in tikv and whenever get and delete request is made then if
 
 		
 register - gen message - login verify message in middleware
+
+
+
+
+register(save user to db) - login (generate csrf token and save to db) - send this token with every request and check auth in middleware if not authenticated block response. send animal object in post request and save that object in db.
