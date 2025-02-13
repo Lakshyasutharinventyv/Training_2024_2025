@@ -12,18 +12,18 @@ use crate::handlers::{
 use crate::middlewares::{logger::logger, auth::auth, add_id::add_id};
 
 pub fn router(db: MySqlPool) -> Router {
-    let db = Arc::new(db); // ✅ Use Arc for shared DB state
+    let db = Arc::new(db);
 
     Router::new()
-    
+    .route("/", get(|| async { "Authenticated" }))
     .route("/get_animals/{id}", get(get_animal))
     .route("/delete_animals/{id}", delete(delete_animals))
-    .layer(middleware::from_fn(add_id)) // ✅ Add request ID middleware
+    .layer(middleware::from_fn(add_id))
     .route("/post_animals", post(post_animals))
-    .layer(middleware::from_fn_with_state(db.clone(), auth)) // ✅ Ensure auth is after CookieManagerLayer
+    .layer(middleware::from_fn_with_state(db.clone(), auth))
     .route("/login", post(login_handler))
     .route("/register", post(register_handler))
-    .layer(CookieManagerLayer::new()) // ✅ Ensure cookies are handled
-    .layer(middleware::from_fn(logger)) // ✅ Logger first
-        .with_state(db.as_ref().clone()) // ✅ Correctly pass MySqlPool
+    .layer(CookieManagerLayer::new()) 
+    .layer(middleware::from_fn(logger)) 
+        .with_state(db.as_ref().clone()) 
 }

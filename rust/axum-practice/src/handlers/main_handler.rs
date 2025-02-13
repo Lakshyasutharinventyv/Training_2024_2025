@@ -22,7 +22,7 @@ pub async fn login_handler(
     
     match result {
         Ok((user_id, username, email)) => {
-            // 🔹 Generate CSRF Token with user_id and username
+            // Generate CSRF Token with user_id and username
             let csrf_token = generate_token(user_id, &username).await;
 
             let update_result = sqlx::query(
@@ -38,7 +38,7 @@ pub async fn login_handler(
                 return (StatusCode::INTERNAL_SERVER_ERROR, Json(json!({ "message": "Failed to update CSRF token" })));
             }
 
-            // 🔹 Set CSRF Token inside HTTP-only Secure Cookie
+            //Set CSRF Token inside HTTP-only Secure Cookie
             let mut cookie = Cookie::new("csrf_token", csrf_token.clone());
             cookie.set_path("/");
             cookie.set_secure(false);
@@ -47,7 +47,7 @@ pub async fn login_handler(
 
             cookies.add(cookie);
             
-            // 🔹 Respond with success message
+            //Respond with success message
             (StatusCode::OK, Json(json!({ 
                 "message": "User logged in successfully", 
                 "user": username, 
@@ -66,7 +66,7 @@ pub async fn register_handler(
 ) -> impl IntoResponse {
     println!("Received user: {:?}", user);
 
-    // 🔹 Ensure the `users` table exists
+    //Ensure the `users` table exists
     let create_table = sqlx::query(
         "CREATE TABLE IF NOT EXISTS users (
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -84,7 +84,7 @@ pub async fn register_handler(
         return (StatusCode::INTERNAL_SERVER_ERROR, Json(json!({ "message": "Failed to initialize database" })));
     }
 
-    // 🔹 Insert the new user
+    //Insert the new user
     let result = sqlx::query(
         "INSERT INTO users (username, email, password) VALUES (?, ?, ?)"
     )

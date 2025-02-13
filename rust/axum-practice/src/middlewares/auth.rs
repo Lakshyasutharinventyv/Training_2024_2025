@@ -12,8 +12,8 @@ use std::{env, sync::Arc};
 use crate::models::Claims;
 
 pub async fn auth(
-    State(db): State<Arc<MySqlPool>>, // ✅ Inject DB state properly
-    cookies: Cookies,                 // ✅ Extract cookies automatically
+    State(db): State<Arc<MySqlPool>>, 
+    cookies: Cookies,               
     req: Request<Body>,
     next: Next,
 ) -> Response {
@@ -21,7 +21,7 @@ pub async fn auth(
     if let Some(cookie) = cookies.get("csrf_token") {
         let csrf_token = cookie.value().to_string();
 
-        // 🔹 Decode JWT Token
+        //Decode JWT Token
         let secret = env::var("JWT_SECRET").unwrap_or_else(|_| "supersecret".to_string());
         let token_data = decode::<Claims>(
             &csrf_token, 
@@ -34,7 +34,7 @@ pub async fn auth(
                 let user_id = token.claims.user_id;
                 let username = token.claims.username;
 
-                // 🔹 Check token validity in DB
+                //Check token validity in DB
                 let result = sqlx::query_as::<_, (String,)>(
                     "SELECT token FROM users WHERE id = ? AND username = ?"
                 )
